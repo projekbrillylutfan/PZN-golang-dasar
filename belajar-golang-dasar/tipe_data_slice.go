@@ -32,24 +32,56 @@ func main() {
 	// fmt.Println("ini len : ",len(slice5))
 
 	// append
-	days := [...]string {
-		"senin",
-		"selasa",
-		"rabu",
-		"kamis",
-		"jumat",
-		"sabtu",
-		"minggu",
-	}
+	// days := [...]string {
+	// 	"senin",
+	// 	"selasa",
+	// 	"rabu",
+	// 	"kamis",
+	// 	"jumat",
+	// 	"sabtu",
+	// 	"minggu",
+	// }
 
-	daySlice := days[5:]
-	daySlice[0] = "Sabtu Baru"
-	daySlice[1] = "Minggu Baru"
-	fmt.Println(days)
+	// daySlice := days[5:]
+	// daySlice[0] = "Sabtu Baru"
+	// daySlice[1] = "Minggu Baru"
+	// fmt.Println(days)
 
-	daySlice2 := append(daySlice, "libur")
-	daySlice2[0] = "yeah"
-	fmt.Println(daySlice2)
-	fmt.Println(days)
+	// daySlice2 := append(daySlice, "libur")
+	// daySlice2[0] = "yeah"
+	// daySlice2[0] = "sabtu lama"
+	// fmt.Println(daySlice2)
+	// fmt.Println(days)
+	// fmt.Println(daySlice)
+
+	// bikin slice baru
+	// newSlice := make([]string, 2, 5)
+	// newSlice[0] = "brilly"
+	// newSlice[1] = "lutfan"
+
+	// fmt.Println(newSlice)
+	// fmt.Println(len(newSlice))
+	// fmt.Println(cap(newSlice))
+
+	// newSlice2 := append(newSlice, "qasthori")
+	// fmt.Println(newSlice2)
+	// fmt.Println(len(newSlice2))
+	// fmt.Println(cap(newSlice2))
+
+	// copy slice
+	// fromSlice := days[:]
+	// toSlice := make([]string, len(fromSlice), cap(fromSlice))
+
+	// copy(toSlice, fromSlice)
+
+	// fmt.Println(toSlice)
+
+	//perbedaan array dan slice
+
+	iniArray := [...]int{1, 2, 3, 4, 5}
+	iniSlice := []int{1, 2, 3, 4, 5}
+
+	fmt.Println(iniArray)
+	fmt.Println(iniSlice)
 
 }
