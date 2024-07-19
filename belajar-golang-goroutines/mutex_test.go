@@ -96,18 +96,18 @@ func Transfer(user1 *UserBalance, user2 *UserBalance, amount int) {
 }
 
 func TestDeadlock(t *testing.T) {
-	user1 := UserBalance{
+	user1 := &UserBalance{
 		Name: "Eko",
 		Balance: 1000000,
 	}
 
-	user2 := UserBalance{
+	user2 := &UserBalance{
 		Name: "Budi",
 		Balance: 1000000,
 	}
 
-	go Transfer(&user1, &user2, 1000)
-	go Transfer(&user2, &user1, 1000)
+	go Transfer(user1, user2, 1000)
+	go Transfer(user2, user1, 1000)
 
 	time.Sleep(5 * time.Second)
 
