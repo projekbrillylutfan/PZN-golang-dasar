@@ -46,7 +46,7 @@ func TestMultipleFiles(t *testing.T) {
 	fmt.Println(string(c))
 }
 
-//go:embed files/*.txt
+//go:embed /files/*.txt
 var path embed.FS
 
 func TestPathMatcher(t *testing.T) {
