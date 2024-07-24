@@ -11,8 +11,8 @@ import (
 
 func TemplateAutoEscape(writer http.ResponseWriter, request *http.Request) {
 	myTemplates.ExecuteTemplate(writer, "post.gohtml", map[string]interface{}{
-		"Title" : "Template Auto Escape",
-		"Body" : "<p>Ini Adalah Body<script>alert('Anda di Heck')</script></p>",
+		"Title": "Template Auto Escape",
+		"Body":  "<p>Ini Adalah Body<script>alert('Anda di Heck')</script></p>",
 	})
 }
 
@@ -28,7 +28,7 @@ func TestTemplateAutoEscape(t *testing.T) {
 
 func TestTemplateAutoEscapeServer(t *testing.T) {
 	server := http.Server{
-		Addr: "localhost:8080",
+		Addr:    "localhost:8080",
 		Handler: http.HandlerFunc(TemplateAutoEscape),
 	}
 
@@ -40,8 +40,8 @@ func TestTemplateAutoEscapeServer(t *testing.T) {
 
 func TemplateAutoEscapeDisabled(writer http.ResponseWriter, request *http.Request) {
 	myTemplates.ExecuteTemplate(writer, "post.gohtml", map[string]interface{}{
-		"Title" : "Template Auto Escape",
-		"Body" : template.HTML("<h1>Ini Adalah Body</h1>"),
+		"Title": "Template Auto Escape",
+		"Body":  template.HTML("<h1>Ini Adalah Body</h1>"),
 	})
 }
 
@@ -57,7 +57,7 @@ func TestTemplateAutoEscapeDisabled(t *testing.T) {
 
 func TestTemplateAutoEscapeDisabledServer(t *testing.T) {
 	server := http.Server{
-		Addr: "localhost:8080",
+		Addr:    "localhost:8080",
 		Handler: http.HandlerFunc(TemplateAutoEscapeDisabled),
 	}
 
@@ -69,8 +69,8 @@ func TestTemplateAutoEscapeDisabledServer(t *testing.T) {
 
 func TemplateXSS(writer http.ResponseWriter, request *http.Request) {
 	myTemplates.ExecuteTemplate(writer, "post.gohtml", map[string]interface{}{
-		"Title" : "Template Auto Escape",
-		"Body" : template.HTML(request.URL.Query().Get("body")),
+		"Title": "Template Auto Escape",
+		"Body":  template.HTML(request.URL.Query().Get("body")),
 	})
 }
 
@@ -86,7 +86,7 @@ func TestTemplateXSS(t *testing.T) {
 
 func TestTemplateXSSServer(t *testing.T) {
 	server := http.Server{
-		Addr: "localhost:8080",
+		Addr:    "localhost:8080",
 		Handler: http.HandlerFunc(TemplateXSS),
 	}
 
